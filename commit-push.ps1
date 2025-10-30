@@ -13,4 +13,4 @@ function Submit-GitCommitAndPush {
 }
 
 # Uso del script
-Submit-GitCommitAndPush -mensaje "Estructura del proyecto 1"
+Submit-GitCommitAndPush -mensaje "Index casi 'terminado'"
