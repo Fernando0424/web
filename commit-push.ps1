@@ -13,4 +13,4 @@ function Submit-GitCommitAndPush {
 }
 
 # Uso del script
-Submit-GitCommitAndPush -mensaje "tercer commit"
+Submit-GitCommitAndPush -mensaje "Estructura base del sitio"

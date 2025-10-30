@@ -1,12 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Mi Portafolio de Proyectos</title>
 </head>
 <body>
-    <h1>Hello, Mundo!</h1>
-    <p>This is a sample HTML document.</p>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="https://via.placeholder.com/150" alt="Foto de perfil" class="profile-image">
+                <div class="header-text">
+                    <h1>Tu Nombre</h1>
+                    <p>Estudiante de Ingeniería Informática</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="inicio" class="intro">
+            <h2>Bienvenido a mi Portafolio</h2>
+            <p>Soy estudiante de Ingeniería Informática apasionado por el desarrollo de software y la tecnología. En este espacio comparto información detallada sobre mis proyectos más destacados, donde aplico conocimientos de programación, bases de datos, desarrollo web y más.</p>
+            <p>Cada proyecto representa un desafío superado y nuevas habilidades adquiridas en mi camino como desarrollador.</p>
+        </section>
+
+        <section id="proyectos">
+            <h2 style="text-align: center; margin: 2rem 0; color: #1a1a1a; font-size: 2rem;">Mis Proyectos</h2>
+            
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Sistema de Gestión Académica</h3>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>Aplicación web para la gestión de estudiantes, materias y calificaciones con autenticación de usuarios y roles.</p>
+                        <a href="proyecto1.html" class="btn">Ver proyecto completo</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>E-Commerce con Carrito de Compras</h3>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>Plataforma de comercio electrónico con sistema de pagos, gestión de inventario y panel administrativo.</p>
+                        <a href="proyecto2.html" class="btn">Ver proyecto completo</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Aplicación Móvil de Tareas</h3>
+                        <div class="project-tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Redux</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>App móvil para gestión de tareas con sincronización en tiempo real y notificaciones push.</p>
+                        <a href="proyecto3.html" class="btn">Ver proyecto completo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-info">
+            <h2>Contacto</h2>
+            <p>¿Interesado en colaborar o conocer más sobre mis proyectos? ¡Contáctame!</p>
+            <div class="contact-links">
+                <a href="mailto:fernando.olivas04@outlook.es" class="btn">Email</a>
+                <a href="https://github.com/fernando0424" target="_blank" class="btn btn-secondary">GitHub</a>
+                <a href="https://linkedin.com/in/tuusuario" target="_blank" class="btn btn-secondary">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tu Nombre. Todos los derechos reservados.</p>
+            <p>Estudiante de Ingeniería Informática</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll para la navegación
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
