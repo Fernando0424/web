@@ -238,11 +238,6 @@ footer {
     margin-top: 1rem;
 }
 
-/* ========================================
-   NUEVOS ESTILOS - CONCURSOS Y CONTACTO
-   ======================================== */
-
-/* Diseño para concursos - Timeline horizontal */
 .competitions-section {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 3rem 0;
@@ -278,6 +273,7 @@ footer {
 
 .timeline::before {
     content: '';
+    width: 250%;
     position: absolute;
     top: 50%;
     left: 0;
@@ -288,6 +284,7 @@ footer {
 }
 
 .competition-item {
+    margin: 1rem;
     position: relative;
     background: white;
     border-radius: 15px;
@@ -305,7 +302,7 @@ footer {
 
 .competition-number {
     position: absolute;
-    top: -4rem;
+    top: -3.5rem;
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -348,26 +345,15 @@ footer {
     line-height: 1.6;
 }
 
-.competition-item .btn {
-    width: 100%;
-    text-align: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.competition-item .btn:hover {
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-}
-
 /* Nueva sección de contacto - Tarjeta con información visible */
-.contact-section {
-    background: white;
-    margin: 3rem auto;
-    padding: 3rem 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+.competitions-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 3rem 0;
+    margin: 3rem 0;
 }
 
-.contact-container {
+.contact-container {    
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
@@ -493,10 +479,6 @@ footer {
     transform: scale(1.1);
 }
 
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
-
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.8rem;
@@ -523,7 +505,6 @@ footer {
         flex-direction: column;
     }
 
-    /* Responsive para timeline de concursos */
     .timeline {
         flex-direction: column;
         align-items: center;
@@ -549,7 +530,6 @@ footer {
         transform: translateY(-50%);
     }
 
-    /* Responsive para contacto */
     .contact-container {
         grid-template-columns: 1fr;
         gap: 2rem;

@@ -13,4 +13,4 @@ function Submit-GitCommitAndPush {
 }
 
 # Uso del script
-Submit-GitCommitAndPush -mensaje "Index casi 'terminado'"
+Submit-GitCommitAndPush -mensaje "Imagenes de perfil y cambiando estilos del timeline"
