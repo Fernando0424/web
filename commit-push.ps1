@@ -13,4 +13,4 @@ function Submit-GitCommitAndPush {
 }
 
 # Uso del script
-Submit-GitCommitAndPush -mensaje "Estilos del timeline"
+Submit-GitCommitAndPush -mensaje "Cambios pequeños"
