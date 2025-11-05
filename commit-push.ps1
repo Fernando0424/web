@@ -13,4 +13,4 @@ function Submit-GitCommitAndPush {
 }
 
 # Uso del script
-Submit-GitCommitAndPush -mensaje "Imagenes de perfil y cambiando estilos del timeline"
+Submit-GitCommitAndPush -mensaje "Estilos del timeline"
