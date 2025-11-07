@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nombre del Proyecto - Mi Portafolio</title>
     <link rel="stylesheet" href="../styles/styles-global.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -25,22 +27,22 @@
         </ul>
     </nav>
 
-    <h1> <center> En desarrollo </center> </h1>
+    <h1>
+        <center> En desarrollo </center>
+    </h1>
 
     <footer>
         <div class="container">
             <p>&copy; 2025 Fernando Bustillos. Todos los derechos reservados.</p>
         </div>
     </footer>
-
     <script>
-        // Smooth scroll para la navegación
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetSection = document.querySelector(targetId);
                 if (targetSection) {
                     targetSection.scrollIntoView({
@@ -52,4 +54,5 @@
         });
     </script>
 </body>
+
 </html>
