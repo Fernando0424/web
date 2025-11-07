@@ -13,4 +13,4 @@ function Submit-GitCommitAndPush {
 }
 
 # Uso del script
-Submit-GitCommitAndPush -mensaje "Corrección de Nath"
+Submit-GitCommitAndPush -mensaje "Footer"
