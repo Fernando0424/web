@@ -1,5 +1,3 @@
-// translations.js - Archivo con todas las traducciones
-
 const translations = {
     es: {
         // Header
