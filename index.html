@@ -9,13 +9,37 @@
 </head>
 
 <body>
+    <!-- Selector de Idioma -->
+    <div class="language-selector">
+        <button class="language-btn" id="languageBtn">
+            <span class="language-icon" id="currentFlag">🇪🇸</span>
+            <span class="language-text">
+                <span id="currentLang">Español</span>
+                <span class="arrow-icon">▼</span>
+            </span>
+        </button>
+        
+        <div class="language-dropdown" id="languageDropdown">
+            <div class="language-option selected" data-lang="es" data-flag="🇪🇸">
+                <span class="language-icon">🇪🇸</span>
+                <span class="language-name">Español</span>
+                <span class="check-icon">✓</span>
+            </div>
+            <div class="language-option" data-lang="en" data-flag="🇺🇸">
+                <span class="language-icon">🇺🇸</span>
+                <span class="language-name">English</span>
+                <span class="check-icon" style="opacity: 0;">✓</span>
+            </div>
+        </div>
+    </div>
+
     <header id="inicio">
         <div class="container">
             <div class="header-content">
-                <img src="res/images/fotoperfil.jpg" alt="Foto de perfil" class="profile-image">
+                <img src="res/images/fotoperfil.jpg" alt="Foto de perfil" class="profile-image" data-i18n-alt="altProfileImage">
                 <div class="header-text">
-                    <h1>Fernando Ivan Bustillos Olivas</h1>
-                    <p>Estudiante de Ingeniería en Informática</p>
+                    <h1 data-i18n="headerTitle">Fernando Ivan Bustillos Olivas</h1>
+                    <p data-i18n="headerSubtitle">Estudiante de Ingeniería en Informática</p>
                 </div>
             </div>
         </div>
@@ -23,78 +47,81 @@
 
     <nav>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#competencias">Concursos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#inicio" data-i18n="navHome">Inicio</a></li>
+            <li><a href="#proyectos" data-i18n="navProjects">Proyectos</a></li>
+            <li><a href="#competencias" data-i18n="navCompetitions">Concursos</a></li>
+            <li><a href="#contacto" data-i18n="navContact">Contacto</a></li>
         </ul>
     </nav>
 
     <main class="container">
         <section class="intro">
-            <h2>Bienvenido a mi portafolio</h2>
-            <p>Soy estudiante de Ingeniería Informática, me gusta el desarrollo de software y la tecnología. En este
+            <h2 data-i18n="introTitle">Bienvenido a mi portafolio</h2>
+            <p data-i18n="introParagraph1">Soy estudiante de Ingeniería Informática, me gusta el desarrollo de software y la tecnología. En este
                 espacio comparto información detallada sobre mis proyectos más destacados, donde aplico conocimientos de
                 programación, bases de datos, desarrollo web y más, además de algunos de los concursos de mi institución
                 donde he participado.</p>
-            <p>Cada proyecto representa un desafío superado y nuevas habilidades adquiridas en mi camino como
+            <p data-i18n="introParagraph2">Cada proyecto representa un desafío superado y nuevas habilidades adquiridas en mi camino como
                 desarrollador.</p>
         </section>
 
         <section id="proyectos">
-            <h2 class="section-title">Mis Proyectos</h2>
+            <h2 class="section-title" data-i18n="projectsTitle">Mis Proyectos</h2>
 
             <div class="projects-grid">
+                <!-- Proyecto 1 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>InnovaTec - Workys</h3>
+                        <h3 data-i18n="project1Title">InnovaTec - Workys</h3>
                         <div class="project-tags">
-                            <span class="tag">Flutter</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">App Híbrida (Móviles/Web)</span>
+                            <span class="tag" data-i18n="project1Tag1">Flutter</span>
+                            <span class="tag" data-i18n="project1Tag2">Firebase</span>
+                            <span class="tag" data-i18n="project1Tag3">App Híbrida (Móviles/Web)</span>
                         </div>
                     </div>
                     <div class="project-body">
-                        <p>Worky's es una plataforma para ofrecer o contratar tanto personal como servicios para
+                        <p data-i18n="project1Description">Worky's es una plataforma para ofrecer o contratar tanto personal como servicios para
                             eventos, por ejemplo, puedes registrarte para ofrecer tus servicios como mesero en los
                             horarios que estés disponible o puedes registrarte para contratar meseros para un evento en
                             una fecha específica.</p>
-                        <a href="pages/proyecto1.html" class="btn">Ver proyecto completo</a>
+                        <a href="pages/proyecto1.html" class="btn" data-i18n="project1Button">Ver proyecto completo</a>
                     </div>
                 </div>
 
+                <!-- Proyecto 2 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>InnovaTec - PeriPizarra</h3>
+                        <h3 data-i18n="project2Title">InnovaTec - PeriPizarra</h3>
                         <div class="project-tags">
-                            <span class="tag">Flutter</span>
-                            <span class="tag">App Híbrida</span>
-                            <span class="tag">Hardware</span>
+                            <span class="tag" data-i18n="project2Tag1">Flutter</span>
+                            <span class="tag" data-i18n="project2Tag2">App Híbrida</span>
+                            <span class="tag" data-i18n="project2Tag3">Hardware</span>
                         </div>
                     </div>
                     <div class="project-body">
-                        <p>PeriPizarra es una silla periquera para niños, con la innovación de que en la plataforma
+                        <p data-i18n="project2Description">PeriPizarra es una silla periquera para niños, con la innovación de que en la plataforma
                             donde se apoyan los alimentos sea una pantalla interactiva donde el infante puede
                             entretenerse y aprender mientras come, dandole la oportunidad a los padres de hacer menos
                             esfuerzo para mantenerlos ocupados y concentrados en comer.</p>
-                        <a href="pages/proyecto1.html" class="btn">Ver proyecto completo</a>
+                        <a href="pages/proyecto1.html" class="btn" data-i18n="project2Button">Ver proyecto completo</a>
                     </div>
                 </div>
 
+                <!-- Proyecto 3 -->
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>Taller de Investigación - Ubiseller</h3>
+                        <h3 data-i18n="project3Title">Taller de Investigación - Ubiseller</h3>
                         <div class="project-tags">
-                            <span class="tag">Flutter</span>
-                            <span class="tag">Google Maps Api's</span>
-                            <span class="tag">App Híbrida (Móviles)</span>
+                            <span class="tag" data-i18n="project3Tag1">Flutter</span>
+                            <span class="tag" data-i18n="project3Tag2">Google Maps Api's</span>
+                            <span class="tag" data-i18n="project3Tag3">App Híbrida (Móviles)</span>
                         </div>
                     </div>
                     <div class="project-body">
-                        <p>Aplicación móvil para el registro de vendedores de nuestra institución, donde los usuarios
+                        <p data-i18n="project3Description">Aplicación móvil para el registro de vendedores de nuestra institución, donde los usuarios
                             pueden ver su ubicación en tiempo real, además de informacón sobre sus productos, precios y
                             de contacto.</p>
-                        <a href="pages/proyecto1.html" class="btn">Ver proyecto completo</a>
+                        <a href="pages/proyecto1.html" class="btn" data-i18n="project3Button">Ver proyecto completo</a>
                     </div>
                 </div>
             </div>
@@ -103,94 +130,102 @@
 
     <section id="competencias" class="competitions-section">
         <div class="container">
-            <h2 class="section-title" id="concursos">Concursos</h2>
+            <h2 class="section-title" id="concursos" data-i18n="competitionsTitle">Concursos</h2>
 
             <div class="timeline-container">
                 <div class="timeline" id="timeline">
+                    <!-- Competencia 1 -->
                     <div class="competition-item">
                         <div class="competition-number">1</div>
-                        <h3>3er Lugar <br> Concurso de Ciencias Básicas - 2025</h3>
+                        <h3><span data-i18n="comp1Place">3er Lugar</span> <br> <span data-i18n="comp1Title">Concurso de Ciencias Básicas - 2025</span></h3>
                         <div class="competition-tags">
-                            <span class="tag">Física</span>
-                            <span class="tag">Matemáticas</span>
-                            <span class="tag">Química</span>
+                            <span class="tag" data-i18n="comp1Tag1">Física</span>
+                            <span class="tag" data-i18n="comp1Tag2">Matemáticas</span>
+                            <span class="tag" data-i18n="comp1Tag3">Química</span>
                         </div>
-                        <p>Concurso de ciencias básicas del Instituto Tecnológico de Chihuahua 2.</p>
+                        <p data-i18n="comp1Description">Concurso de ciencias básicas del Instituto Tecnológico de Chihuahua 2.</p>
                     </div>
 
+                    <!-- Competencia 2 -->
                     <div class="competition-item">
                         <div class="competition-number">2</div>
-                        <h3>1er Lugar <br> Concurso de Programación - 2024</h3>
+                        <h3><span data-i18n="comp2Place">1er Lugar</span> <br> <span data-i18n="comp2Title">Concurso de Programación - 2024</span></h3>
                         <div class="competition-tags">
-                            <span class="tag">Lógica de Programación</span>
-                            <span class="tag">Java</span>
-                            <span class="tag">Python</span>
+                            <span class="tag" data-i18n="comp2Tag1">Lógica de Programación</span>
+                            <span class="tag" data-i18n="comp2Tag2">Java</span>
+                            <span class="tag" data-i18n="comp2Tag3">Python</span>
                         </div>
-                        <p>Concurso de programación del Instituto Tecnológico de Chihuahua 2.</p>
+                        <p data-i18n="comp2Description">Concurso de programación del Instituto Tecnológico de Chihuahua 2.</p>
                     </div>
 
+                    <!-- Competencia 3 -->
                     <div class="competition-item">
                         <div class="competition-number">3</div>
-                        <h3>3er Lugar <br> Concurso de Ciencias Básicas - 2024</h3>
+                        <h3><span data-i18n="comp3Place">3er Lugar</span> <br> <span data-i18n="comp3Title">Concurso de Ciencias Básicas - 2024</span></h3>
                         <div class="competition-tags">
-                            <span class="tag">Física</span>
-                            <span class="tag">Matemáticas</span>
-                            <span class="tag">Química</span>
+                            <span class="tag" data-i18n="comp3Tag1">Física</span>
+                            <span class="tag" data-i18n="comp3Tag2">Matemáticas</span>
+                            <span class="tag" data-i18n="comp3Tag3">Química</span>
                         </div>
-                        <p>Concurso de ciencias básicas del Instituto Tecnológico de Chihuahua 2.</p>
+                        <p data-i18n="comp3Description">Concurso de ciencias básicas del Instituto Tecnológico de Chihuahua 2.</p>
                     </div>
 
+                    <!-- Competencia 4 -->
                     <div class="competition-item">
                         <div class="competition-number">4</div>
-                        <h3>1er Lugar <br> Concurso de Programación - 2023</h3>
+                        <h3><span data-i18n="comp4Place">1er Lugar</span> <br> <span data-i18n="comp4Title">Concurso de Programación - 2023</span></h3>
                         <div class="competition-tags">
-                            <span class="tag">Lógica de Programación</span>
-                            <span class="tag">Java</span>
+                            <span class="tag" data-i18n="comp4Tag1">Lógica de Programación</span>
+                            <span class="tag" data-i18n="comp4Tag2">Java</span>
                         </div>
-                        <p>Concurso de programación del Instituto Tecnológico de Chihuahua 2.</p>
+                        <p data-i18n="comp4Description">Concurso de programación del Instituto Tecnológico de Chihuahua 2.</p>
                     </div>
 
+                    <!-- Competencia 5 -->
                     <div class="competition-item">
                         <div class="competition-number">5</div>
-                        <h3>3er Lugar <br> Concurso de Ciencias Básicas - 2023</h3>
+                        <h3><span data-i18n="comp5Place">3er Lugar</span> <br> <span data-i18n="comp5Title">Concurso de Ciencias Básicas - 2023</span></h3>
                         <div class="competition-tags">
-                            <span class="tag">Física</span>
-                            <span class="tag">Matemáticas</span>
-                            <span class="tag">Química</span>
+                            <span class="tag" data-i18n="comp5Tag1">Física</span>
+                            <span class="tag" data-i18n="comp5Tag2">Matemáticas</span>
+                            <span class="tag" data-i18n="comp5Tag3">Química</span>
                         </div>
-                        <p>Concurso de ciencias básicas del Instituto Tecnológico de Chihuahua 2.</p>
+                        <p data-i18n="comp5Description">Concurso de ciencias básicas del Instituto Tecnológico de Chihuahua 2.</p>
                     </div>
 
+                    <!-- Competencia 6 -->
                     <div class="competition-item">
                         <div class="competition-number">6</div>
-                        <h3>1er Lugar <br> Concurso de Programación - 2022</h3>
+                        <h3><span data-i18n="comp6Place">1er Lugar</span> <br> <span data-i18n="comp6Title">Concurso de Programación - 2022</span></h3>
                         <div class="competition-tags">
-                            <span class="tag">Lógica de Programación</span>
-                            <span class="tag">Java</span>
+                            <span class="tag" data-i18n="comp6Tag1">Lógica de Programación</span>
+                            <span class="tag" data-i18n="comp6Tag2">Java</span>
                         </div>
-                        <p>Concurso de programación del Instituto Tecnológico de Chihuahua 2.</p>
+                        <p data-i18n="comp6Description">Concurso de programación del Instituto Tecnológico de Chihuahua 2.</p>
                     </div>
 
+                    <!-- Competencia 7 -->
                     <div class="competition-item">
                         <div class="competition-number">7</div>
-                        <h3>2do Lugar <br> Concurso de Ciencias Básicas - 2022</h3>
+                        <h3><span data-i18n="comp7Place">2do Lugar</span> <br> <span data-i18n="comp7Title">Concurso de Ciencias Básicas - 2022</span></h3>
                         <div class="competition-tags">
-                            <span class="tag">Física</span>
-                            <span class="tag">Matemáticas</span>
-                            <span class="tag">Química</span>
+                            <span class="tag" data-i18n="comp7Tag1">Física</span>
+                            <span class="tag" data-i18n="comp7Tag2">Matemáticas</span>
+                            <span class="tag" data-i18n="comp7Tag3">Química</span>
                         </div>
-                        <p>Concurso de ciencias básicas del Instituto Tecnológico de Chihuahua 2.</p>
+                        <p data-i18n="comp7Description">Concurso de ciencias básicas del Instituto Tecnológico de Chihuahua 2.</p>
                     </div>
 
+                    <!-- Competencia 8 -->
                     <div class="competition-item">
-                        <div class="competition-number">7</div>
-                        <h3>2do Lugar <br> Concurso de Ciencias Básicas - 2022</h3>
+                        <div class="competition-number">8</div>
+                        <h3><span data-i18n="comp8Place">2do Lugar</span> <br> <span data-i18n="comp8Title">Concurso de Ciencias Básicas - 2022</span></h3>
                         <div class="competition-tags">
-                            <span class="tag">Física</span>
-                            <span class="tag">Matemáticas</span>
-                            <span class="tag">Química</span>
+                            <span class="tag" data-i18n="comp8Tag1">Física</span>
+                            <span class="tag" data-i18n="comp8Tag2">Matemáticas</span>
+                            <span class="tag" data-i18n="comp8Tag3">Química</span>
                         </div>
-                        <p>Concurso de ciencias básicas del Instituto Tecnológico de Chihuahua 2.</p>
+                        <p data-i18n="comp8Description">Concurso de ciencias básicas del Instituto Tecnológico de Chihuahua 2.</p>
                     </div>
                 </div>
             </div>
@@ -199,16 +234,16 @@
 
     <main class="container">
         <section id="contacto" class="contact-section">
-            <h2 class="section-title">Contacto</h2>
+            <h2 class="section-title" data-i18n="contactTitle">Contacto</h2>
 
             <div class="contact-container">
                 <div class="contact-info-card">
-                    <h3>Información de Contacto</h3>
+                    <h3 data-i18n="contactInfoTitle">Información de Contacto</h3>
 
                     <div class="contact-item">
                         <div class="contact-icon">@</div>
                         <div class="contact-details">
-                            <div class="contact-label">Email</div>
+                            <div class="contact-label" data-i18n="contactEmailLabel">Email</div>
                             <div class="contact-value">
                                 <a href="mailto:fernando.olivas04@outlook.es">fernando.olivas04@outlook.es</a>
                             </div>
@@ -217,10 +252,10 @@
 
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <img src="github.png" alt="Icono github" style="width: 110%; height: 110%;">
+                            <img src="github.png" alt="Icono github" style="width: 110%; height: 110%;" data-i18n-alt="altGithubIcon">
                         </div>
                         <div class="contact-details">
-                            <div class="contact-label">GitHub</div>
+                            <div class="contact-label" data-i18n="contactGithubLabel">GitHub</div>
                             <div class="contact-value">
                                 <a href="https://github.com/fernando0424" target="_blank">github.com/fernando0424</a>
                             </div>
@@ -229,8 +264,8 @@
                 </div>
 
                 <div class="contact-cta">
-                    <h3>¿Interesado en colaborar?</h3>
-                    <p>Estoy abierto a nuevas oportunidades de colaboración, proyectos interesantes y networking. No
+                    <h3 data-i18n="contactCtaTitle">¿Interesado en colaborar?</h3>
+                    <p data-i18n="contactCtaDescription">Estoy abierto a nuevas oportunidades de colaboración, proyectos interesantes y networking. No
                         dudes en contactarme.</p>
                     <div class="social-links">
                         <a href="mailto:fernando.olivas04@outlook.es" class="social-link" title="Email">@</a>
@@ -245,26 +280,15 @@
 
     <footer>
         <div class="container">
-            <p>¡Gracias por visitar mi sitio!</p>
+            <p data-i18n="footerText">¡Gracias por visitar mi sitio!</p>
         </div>
     </footer>
 
-    <script>
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- Importar archivo de traducciones -->
+    <script src="js/translations.js"></script>
+    
+    <!-- Script principal -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>

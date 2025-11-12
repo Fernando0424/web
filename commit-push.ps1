@@ -9,7 +9,7 @@ function Submit-GitCommitAndPush {
     git commit -m $mensaje
     # Empuja los cambios
     git push origin main
-    Write-Host "Commit y push completados exitosamente."
+    Write-Host "Agregado idioma inglés"
 }
 
 # Uso del script
