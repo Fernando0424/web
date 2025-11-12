@@ -13,4 +13,4 @@ function Submit-GitCommitAndPush {
 }
 
 # Uso del script
-Submit-GitCommitAndPush -mensaje "Footer"
+Submit-GitCommitAndPush -mensaje "Agregado idioma inglés"
