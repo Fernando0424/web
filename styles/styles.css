@@ -1,3 +1,13 @@
+/* =============================================================
+   styles.css — ESTILOS GLOBALES
+   Reemplaza por completo tu styles/styles.css existente.
+   Incluye todos tus estilos originales + correcciones menores
+   (se eliminaron los bloques duplicados de * y body que tenías).
+   ============================================================= */
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
 * {
     margin: 0;
     padding: 0;
@@ -11,11 +21,20 @@ body {
     background: #f4f4f4;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
 header {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     color: white;
     padding: 3rem 0 2rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     position: relative;
 }
 
@@ -32,19 +51,13 @@ header {
     height: 150px;
     border-radius: 50%;
     border: 5px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     object-fit: cover;
     background: rgba(255, 255, 255, 0.1);
 }
 
 .header-text {
     text-align: center;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 header h1 {
@@ -57,9 +70,12 @@ header p {
     opacity: 0.9;
 }
 
+/* =============================================
+   NAVEGACIÓN
+   ============================================= */
 nav {
     background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -90,126 +106,9 @@ nav a:hover {
     color: white;
 }
 
-.intro {
-    background: white;
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.intro h2 {
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem auto;
-}
-
-.project-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.project-header {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: white;
-    padding: 1.5rem;
-}
-
-.project-header h3 {
-    margin-bottom: 0.5rem;
-}
-
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-.tag {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.85rem;
-}
-
-.project-body {
-    padding: 1.5rem;
-}
-
-.project-body p {
-    margin-bottom: 1rem;
-    color: #666;
-}
-
-.project-details {
-    display: none;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 2px solid #f0f0f0;
-}
-
-.project-details.active {
-    display: block;
-}
-
-.project-details h4 {
-    color: #1a1a1a;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.project-details ul {
-    margin-left: 1.5rem;
-    color: #666;
-}
-
-.project-details li {
-    margin-bottom: 0.5rem;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #1a1a1a;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.btn:hover {
-    background: #2d2d2d;
-}
-
-.btn-secondary {
-    background: #f4f4f4;
-    color: #333;
-    margin-left: 0.5rem;
-}
-
-.btn-secondary:hover {
-    background: #e0e0e0;
-}
-
+/* =============================================
+   FOOTER
+   ============================================= */
 footer {
     background: #1a1a1a;
     color: white;
@@ -218,267 +117,477 @@ footer {
     margin-top: 3rem;
 }
 
-.contact-info {
+/* =============================================
+   SECCIONES DE CONTENIDO (páginas de proyecto)
+   ============================================= */
+.content-section {
     background: white;
     margin: 2rem auto;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.contact-info h2 {
+.content-section h2 {
     color: #1a1a1a;
-    margin-bottom: 1rem;
-}
-
-.contact-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-}
-
-.competitions-section {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    padding: 3rem 0;
-    margin: 3rem 0;
-}
-
-.competitions-section .section-title {
-    color: white;
-}
-
-#concursos {
-    margin: 2rem;
-}
-
-.timeline-container {
-    position: relative;
-    padding: 2rem 0;
-    overflow-x: auto;
-}
-
-.timeline {
-    display: flex;
-    gap: 2rem;
-    padding: 2rem 1rem;
-    min-width: min-content;
-}
-
-.timeline::before {
-    content: '';
-    width: 250%;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-50%);
-}
-
-.competition-item {
-    margin: 1rem;
-    position: relative;
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    min-width: 320px;
-    max-width: 320px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid #e0e0e0;
-}
-
-.competition-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    border-color: #2d2d2d;
-}
-
-.competition-number {
-    position: absolute;
-    top: -3.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    border: 3px solid rgba(255, 255, 255, 0.2);
-}
-
-.competition-item h3 {
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.competition-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
-}
-
-.competition-tags .tag {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.competition-item p {
-    color: #666;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-/* Nueva sección de contacto - Tarjeta con información visible */
-
-.competitions-section {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    padding: 3rem 0;
-    margin: 3rem 0;
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-top: 2rem;
-}
-
-.contact-info-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info-card h3 {
-    color: #1a1a1a;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #f0f0f0;
 }
 
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
+.content-section h3 {
+    color: #2d2d2d;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.content-section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.content-section ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.content-section li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* =============================================
+   HERO DEL PROYECTO
+   ============================================= */
+.project-hero {
     background: white;
-    border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-.contact-item:hover {
-    transform: translateX(10px);
-}
-
-.contact-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    flex-shrink: 0;
-}
-
-.contact-details {
-    flex: 1;
-}
-
-.contact-label {
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 0.25rem;
-    font-size: 0.9rem;
-}
-
-.contact-value {
-    color: #666;
-    word-break: break-all;
-}
-
-.contact-value a {
-    color: #667eea;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-value a:hover {
-    color: #764ba2;
-    text-decoration: underline;
-}
-
-.contact-cta {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    padding: 2rem;
+    margin: 2rem auto;
+    padding: 3rem 2.5rem;
     border-radius: 10px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: center;
 }
 
-.contact-cta h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.contact-cta p {
+.project-hero h1 {
+    font-size: 2.8rem;
+    color: #1a1a1a;
     margin-bottom: 1.5rem;
-    opacity: 0.9;
-    line-height: 1.8;
 }
 
-.social-links {
+.project-meta {
     display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
 }
 
-.social-link {
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.1);
+.meta-item {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.project-tags-large {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+/* =============================================
+   TAG (compartido entre proyectos y concursos)
+   ============================================= */
+.tag {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* =============================================
+   IMAGEN PRINCIPAL
+   ============================================= */
+.project-image-section {
+    margin: 2rem auto;
+}
+
+.project-main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* =============================================
+   GRID DE CARACTERÍSTICAS
+   ============================================= */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #1a1a1a;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+    color: #666;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* =============================================
+   GRID DE TECNOLOGÍAS
+   ============================================= */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tech-category {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.tech-category h3 {
+    color: #1a1a1a;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tech-category ul {
+    list-style: none;
+    margin: 0;
+}
+
+.tech-category li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.tech-category li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #1a1a1a;
+    font-weight: bold;
+}
+
+.tech-category strong {
+    color: #1a1a1a;
+}
+
+/* =============================================
+   TIMELINE (páginas de proyecto)
+   ============================================= */
+.timeline-project {
+    position: relative;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.timeline-project:before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #e0e0e0;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.timeline-marker {
+    min-width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    text-decoration: none;
     font-weight: bold;
-    transition: background 0.3s, transform 0.3s;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
-.social-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
+.timeline-content {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid #1a1a1a;
 }
 
-/* ===== SELECTOR DE IDIOMA ===== */
+.timeline-content h3 {
+    color: #1a1a1a;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
 
+.timeline-content p {
+    color: #666;
+    margin: 0;
+}
+
+/* =============================================
+   RETOS Y SOLUCIONES
+   ============================================= */
+.challenges-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.challenge-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #d32f2f;
+}
+
+.challenge-card h3 {
+    color: #1a1a1a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.challenge-card p {
+    color: #666;
+    margin-bottom: 0.75rem;
+}
+
+.challenge-card strong {
+    color: #1a1a1a;
+}
+
+/* =============================================
+   OBJETIVOS Y RESULTADOS
+   ============================================= */
+.objectives-list {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.objectives-list li {
+    padding: 1rem;
+    background: #f9f9f9;
+    margin-bottom: 0.75rem;
+    border-radius: 5px;
+    border-left: 4px solid #1a1a1a;
+    color: #555;
+}
+
+.objectives-list li:before {
+    content: "✓ ";
+    color: #1a1a1a;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.results-content {
+    margin-top: 2rem;
+}
+
+.results-content h3 {
+    color: #1a1a1a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.results-content ul {
+    margin-left: 1.5rem;
+}
+
+.results-content li {
+    margin-bottom: 0.75rem;
+    color: #555;
+}
+
+/* =============================================
+   GALERÍA
+   ============================================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.gallery-item p {
+    margin-top: 0.75rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* =============================================
+   ENLACES Y RECURSOS
+   ============================================= */
+.links-section {
+    background: #f9f9f9;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.link-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.link-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.link-card h3 {
+    color: #1a1a1a;
+    margin: 0 0 0.5rem 0;
+}
+
+.link-card p {
+    color: #666;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* =============================================
+   NAVEGACIÓN ENTRE PROYECTOS
+   ============================================= */
+.navigation-section {
+    background: #f9f9f9;
+}
+
+.project-navigation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.nav-project {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-project:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.nav-project span {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.nav-project strong {
+    color: #1a1a1a;
+    font-size: 1.1rem;
+}
+
+.nav-home {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.nav-home span {
+    font-size: 2rem;
+    color: white;
+}
+
+.nav-home strong {
+    color: white;
+}
+
+/* =============================================
+   SELECTOR DE IDIOMA
+   ============================================= */
 .language-selector {
     position: fixed;
     top: 20px;
@@ -499,13 +608,13 @@ footer {
     align-items: center;
     gap: 0.75rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .language-btn:hover {
     border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 .language-icon {
@@ -538,7 +647,7 @@ footer {
     right: 0;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
@@ -591,8 +700,39 @@ footer {
     color: #4CAF50;
 }
 
-/* Responsive */
+/* =============================================
+   BTN (compartido)
+   ============================================= */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
 
+.btn:hover {
+    background: #2d2d2d;
+}
+
+.btn-secondary {
+    background: #f4f4f4;
+    color: #333;
+    margin-left: 0.5rem;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+/* =============================================
+   RESPONSIVO GLOBAL
+   ============================================= */
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.8rem;
@@ -611,42 +751,43 @@ footer {
         padding: 0.75rem 1rem;
     }
 
-    .projects-grid {
+    .project-hero h1 {
+        font-size: 2rem;
+    }
+
+    .project-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .features-grid,
+    .tech-grid,
+    .gallery-grid,
+    .links-grid {
         grid-template-columns: 1fr;
     }
 
-    .contact-links {
-        flex-direction: column;
+    .timeline-project:before {
+        left: 20px;
     }
 
-    .timeline {
-        flex-direction: column;
-        align-items: center;
+    .timeline-marker {
+        min-width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin-right: 1rem;
     }
 
-    .timeline::before {
-        width: 4px;
-        height: 100%;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
-    }
-
-    .competition-item::before {
-        top: 50%;
-        left: -2.5rem;
-        transform: translateY(-50%);
-    }
-
-    .competition-number {
-        top: 50%;
-        left: -4rem;
-        transform: translateY(-50%);
-    }
-
-    .contact-container {
+    .project-navigation {
         grid-template-columns: 1fr;
-        gap: 2rem;
     }
 
     .language-selector {

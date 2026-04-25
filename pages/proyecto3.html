@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ubiseller - Mi Portafolio</title>
+    <link rel="stylesheet" href="../styles/styles-global.css">
 </head>
+
 <body>
-    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="../res/images/fotoperfil.jpg" alt="Foto de perfil" class="profile-image">
+                <div class="header-text">
+                    <h1>Fernando Ivan Bustillos Olivas</h1>
+                    <p>Estudiante de Ingeniería en Informática</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">← Volver al Portafolio</a></li>
+        </ul>
+    </nav>
+
+    <h1>
+        <center> En desarrollo </center>
+    </h1>
+
+    <footer>
+        <div class="container">
+            <p>¡Gracias por visitar mi sitio!</p>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
