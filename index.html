@@ -51,6 +51,12 @@
             <li><a href="#proyectos" data-i18n="navProjects">Proyectos</a></li>
             <li><a href="#competencias" data-i18n="navCompetitions">Concursos</a></li>
             <li><a href="#contacto" data-i18n="navContact">Contacto</a></li>
+            <li class="nav-lang-inline">
+            <select id="navLangSelect" aria-label="Idioma">
+                <option value="es">🇪🇸 Español</option>
+                <option value="en">🇺🇸 English</option>
+            </select>
+        </li>
         </ul>
     </nav>
 
@@ -66,15 +72,15 @@
                 <div class="about-skills">
                     <h3 data-i18n="aboutSkillsTitle">Tecnologías que manejo</h3>
                     <div class="skills-tags">
-                        <span class="skill-tag">Flutter</span>
-                        <span class="skill-tag">Firebase</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">Bases de Datos</span>
-                        <span class="skill-tag">IoT / Hardware</span>
-                        <span class="skill-tag">HTML / CSS / JS</span>
-                        <span class="skill-tag">Integración de IA</span>
+                        <span class="skill-tag" data-i18n="skillFlutter">Flutter</span>
+                        <span class="skill-tag" data-i18n="skillFirebase">Firebase</span>
+                        <span class="skill-tag" data-i18n="skillJava">Java</span>
+                        <span class="skill-tag" data-i18n="skillPython">Python</span>
+                        <span class="skill-tag" data-i18n="skillCSharp">C#</span>
+                        <span class="skill-tag" data-i18n="skillDB">Bases de Datos</span>
+                        <span class="skill-tag" data-i18n="skillIoT">IoT / Hardware</span>
+                        <span class="skill-tag" data-i18n="skillWeb">HTML / CSS / JS</span>
+                        <span class="skill-tag" data-i18n="skillAI">Integración de IA</span>
                     </div>
                 </div>
             </div>
@@ -83,7 +89,6 @@
         <section id="proyectos">
             <h2 class="section-title" data-i18n="projectsTitle">Mis Proyectos</h2>
             <div class="projects-grid">
-
                 <div class="project-card">
                     <div class="project-header">
                         <h3 data-i18n="project4Title">InnovaTec — BoviTrack</h3>
@@ -95,7 +100,7 @@
                     </div>
                     <div class="project-body">
                         <p data-i18n="project4Description">Sistema inteligente de monitoreo y seguridad ganadera. Utiliza sensores IoT y agentes de IA para el análisis de comportamiento animal y detección de anomalías en tiempo real.</p>
-                        <a href="pages/proyecto4.html" class="btn" data-i18n="project4Button">Ver proyecto completo</a>
+                        <a href="pages/pBoviTrack.html" class="btn" data-i18n="project4Button">Ver proyecto completo</a>
                     </div>
                 </div>
 
@@ -110,7 +115,7 @@
                     </div>
                     <div class="project-body">
                         <p data-i18n="project1Description">Plataforma para ofrecer o contratar personal y servicios para eventos. Gestión de perfiles, horarios y contrataciones en tiempo real.</p>
-                        <a href="pages/proyecto1.html" class="btn" data-i18n="project1Button">Ver proyecto completo</a>
+                        <a href="pages/pWorkys.html" class="btn" data-i18n="project1Button">Ver proyecto completo</a>
                     </div>
                 </div>
 
@@ -125,7 +130,7 @@
                     </div>
                     <div class="project-body">
                         <p data-i18n="project5Description">Sistema de visualización de estacionamiento en tiempo real. Integra cámaras con IA y comunicación vía HTTPS para monitorear la disponibilidad de espacios desde cualquier dispositivo.</p>
-                        <a href="pages/proyecto5.html" class="btn" data-i18n="project5Button">Ver proyecto completo</a>
+                        <a href="pages/pSmartParking.html" class="btn" data-i18n="project5Button">Ver proyecto completo</a>
                     </div>
                 </div>
 
@@ -140,13 +145,13 @@
                     </div>
                     <div class="project-body">
                         <p data-i18n="project2Description">Silla periquera con pantalla interactiva integrada. Un proyecto que une hardware y software para el entretenimiento y aprendizaje infantil durante la alimentación.</p>
-                        <a href="pages/proyecto2.html" class="btn" data-i18n="project2Button">Ver proyecto completo</a>
+                        <a href="pages/pPeriPizarra.html" class="btn" data-i18n="project2Button">Ver proyecto completo</a>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 data-i18n="project3Title">Taller de Investigación — Ubiseller</h3>
+                        <h3 data-i18n="project3Title">Ubiseller</h3>
                         <div class="project-tags">
                             <span class="tag">Google Maps API</span>
                             <span class="tag">Geolocalización</span>
@@ -154,7 +159,7 @@
                     </div>
                     <div class="project-body">
                         <p data-i18n="project3Description">Aplicación móvil para la localización de vendedores institucionales. Seguimiento en tiempo real y catálogo de productos con integración de mapas.</p>
-                        <a href="pages/proyecto3.html" class="btn" data-i18n="project3Button">Ver proyecto completo</a>
+                        <a href="pages/pUbiseller.html" class="btn" data-i18n="project3Button">Ver proyecto completo</a>
                     </div>
                 </div>
 
@@ -169,7 +174,7 @@
                     </div>
                     <div class="project-body">
                         <p data-i18n="project6Description">Desarrollo integral de un sistema CRUD en Java para la administración de alumnos, docentes y cursos, con lógica de autenticación y persistencia de datos local.</p>
-                        <a href="pages/proyecto6.html" class="btn" data-i18n="project6Button">Ver proyecto completo</a>
+                        <a href="pages/pCRUD.html" class="btn" data-i18n="project6Button">Ver proyecto completo</a>
                     </div>
                 </div>
 
@@ -209,19 +214,19 @@
                 </div>
             </div>
 
-            <div class="comp-group">
+             <div class="comp-group">
                 <p class="comp-group-title" data-i18n="compSciTitle">📐 Concursos de Ciencias Básicas — ITCH2</p>
                 <div class="comp-science-card">
                     <h4 data-i18n="compSciSubtitle">Física · Matemáticas · Química</h4>
                     <div class="science-results">
-                        <div class="science-badge"><span class="medal">🥉</span> 3er Lugar 2025</div>
-                        <div class="science-badge"><span class="medal">🥉</span> 3er Lugar 2024</div>
-                        <div class="science-badge"><span class="medal">🥉</span> 3er Lugar 2023</div>
-                        <div class="science-badge"><span class="medal">🥈</span> 2do Lugar 2022</div>
+                        <div class="science-badge" data-i18n="compSciBadge1">🥉 3er Lugar 2025</div>
+                        <div class="science-badge" data-i18n="compSciBadge2">🥉 3er Lugar 2024</div>
+                        <div class="science-badge" data-i18n="compSciBadge3">🥉 3er Lugar 2023</div>
+                        <div class="science-badge" data-i18n="compSciBadge4">🥈 2do Lugar 2022</div>
                     </div>
                 </div>
             </div>
-
+ 
         </div>
     </section>
 

@@ -36,6 +36,10 @@ function setLanguage(lang) {
     localStorage.setItem('preferredLanguage', lang);
     
     updateLanguageSelector(lang);
+
+    // Sincronizar el select del nav en móvil
+    const navLangSelect = document.getElementById('navLangSelect');
+    if (navLangSelect) navLangSelect.value = lang;
 }
 
 function setupLanguageSelector() {
@@ -68,6 +72,15 @@ function setupLanguageSelector() {
             languageDropdown.classList.remove('active');
         });
     });
+
+    // Select inline del nav (móvil)
+    const navLangSelect = document.getElementById('navLangSelect');
+    if (navLangSelect) {
+        navLangSelect.value = currentLanguage;
+        navLangSelect.addEventListener('change', function () {
+            setLanguage(this.value);
+        });
+    }
 }
 
 function updateLanguageSelector(lang) {

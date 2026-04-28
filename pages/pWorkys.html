@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workys - Portafolio de Fernando Bustillos</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        /* =============================================
+           ESTILOS ESPECÍFICOS DE PROYECTO
+           Complementan styles.css sin pisarlo.
+           ============================================= */
+
+        /* Etiqueta de concurso sobre el hero */
+        .project-eyebrow {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #1a1a1a;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        /* Hero de proyecto adaptado al estilo index */
+        .project-hero {
+            background: white;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-hero h1 {
+            font-size: 2.2rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .project-hero-desc {
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+
+        .project-hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-hero-tags .tag {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .hero-btn-row {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #1a1a1a;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        /* Meta cards (contexto) */
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .meta-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            border-left: 4px solid #1a1a1a;
+        }
+
+        .meta-card-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #999;
+            margin-bottom: 0.35rem;
+        }
+
+        .meta-card-value {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        /* Sección de contenido estilo index */
+        .proj-section {
+            background: white;
+            margin: 1.5rem auto;
+            padding: 2rem 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .proj-section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.4rem;
+        }
+
+        .proj-section h2 {
+            color: #1a1a1a;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #f0f0f0;
+        }
+
+        .proj-section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .proj-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .proj-section strong {
+            color: #1a1a1a;
+        }
+
+        /* Grid de funcionalidades */
+        .feat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .feat-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid #1a1a1a;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
+        .feat-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .feat-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .feat-desc {
+            font-size: 0.88rem;
+            color: #666;
+            line-height: 1.65;
+        }
+
+        .feat-warning {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-size: 0.75rem;
+            background: #fff8e1;
+            color: #e65100;
+            border: 1px solid #ffe0b2;
+            border-radius: 4px;
+            padding: 0.2rem 0.55rem;
+            font-weight: 600;
+        }
+
+        /* Stack tecnológico */
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stack-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .stack-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .stack-info h4 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.15rem;
+        }
+
+        .stack-info p {
+            font-size: 0.78rem;
+            color: #888;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Sistema de niveles */
+        .levels-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+
+        .level-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 0.85rem 1.25rem;
+        }
+
+        .level-icon {
+            font-size: 1.4rem;
+            width: 30px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .level-bar-wrap {
+            flex: 1;
+            background: #e0e0e0;
+            border-radius: 99px;
+            height: 6px;
+            overflow: hidden;
+        }
+
+        .level-bar {
+            height: 100%;
+            border-radius: 99px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        .level-label {
+            font-size: 0.82rem;
+            color: #888;
+            width: 90px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        /* Nota de advertencia */
+        .warning-box {
+            background: #fff8e1;
+            border: 1px solid #ffe0b2;
+            border-left: 4px solid #e65100;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            gap: 0.9rem;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+        }
+
+        .warning-box-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .warning-box-text {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .warning-box-text strong {
+            color: #e65100;
+        }
+
+        /* Navegación entre proyectos */
+        .proj-nav {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+            margin: 2rem auto;
+        }
+
+        .proj-nav-btn {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            text-decoration: none;
+            color: #333;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .proj-nav-btn:hover {
+            border-color: #1a1a1a;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            color: #333;
+        }
+
+        .proj-nav-btn span {
+            font-size: 0.72rem;
+            color: #999;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .proj-nav-btn strong {
+            font-size: 0.95rem;
+            color: #1a1a1a;
+        }
+
+        .proj-nav-right {
+            text-align: right;
+        }
+
+        .proj-nav-home {
+            text-decoration: none;
+            color: #999;
+            font-size: 0.85rem;
+            text-align: center;
+            transition: color 0.2s;
+            font-weight: 600;
+        }
+
+        .proj-nav-home:hover {
+            color: #1a1a1a;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .project-hero h1 { font-size: 1.7rem; }
+            .feat-grid { grid-template-columns: 1fr; }
+            .stack-grid { grid-template-columns: 1fr 1fr; }
+            .proj-nav { grid-template-columns: 1fr 1fr; }
+            .proj-nav-home { display: none; }
+            .proj-section { padding: 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .stack-grid { grid-template-columns: 1fr; }
+            .proj-nav { grid-template-columns: 1fr; }
+            .proj-nav-right { text-align: left; }
+            .meta-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="../res/images/fotoperfil.jpg" alt="Foto de perfil" class="profile-image">
+                <div class="header-text">
+                    <h1>Fernando Ivan Bustillos Olivas</h1>
+                    <p>Estudiante de Ingeniería en Informática</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">← Volver al Portafolio</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <!-- HERO -->
+        <div class="project-hero">
+            <span class="project-eyebrow">InnovaTec 2025</span>
+            <h1>Workys</h1>
+            <p class="project-hero-desc">
+                Plataforma híbrida de contratación de servicios personales para eventos — meseros, guardias, chefs y más — que conecta a quienes ofrecen su tiempo con quienes lo necesitan.
+            </p>
+            <div class="project-hero-tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Android</span>
+                <span class="tag">iOS</span>
+                <span class="tag">Web</span>
+            </div>
+            <div class="hero-btn-row">
+                <a href="https://workys21.web.app/" target="_blank" class="btn">🌐 Ver aplicación</a>
+                <a href="../index.html" class="btn-outline">← Portafolio</a>
+            </div>
+        </div>
+
+        <!-- CONTEXTO -->
+        <div class="proj-section">
+            <div class="proj-section-label">Contexto del proyecto</div>
+            <h2>¿Qué es Workys y de dónde surge?</h2>
+            <p>
+                Workys nace de <strong>InnovaTec 2025</strong>, un concurso de innovación tecnológica en el ITCH2. Fui invitado a participar como <strong>único desarrollador</strong> del equipo, siendo responsable de la totalidad del desarrollo — desde la arquitectura hasta la implementación.
+            </p>
+            <p>
+                La idea es similar al modelo de apps de transporte como Uber o DiDi, pero aplicado a servicios de personal para eventos: meseros, guardias de seguridad, chefs, animadores y cualquier perfil de servicio eventual. La plataforma permite que un mismo usuario pueda <strong>tanto contratar como ofrecer servicios</strong>, cambiando de rol dentro de la misma app. Para ofrecer servicios se exige una verificación documental que valida la identidad y legalidad del trabajador.
+            </p>
+
+            <div class="meta-grid">
+                <div class="meta-card">
+                    <div class="meta-card-label">Concurso</div>
+                    <div class="meta-card-value">InnovaTec 2025</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Institución</div>
+                    <div class="meta-card-value">ITCH2</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Rol</div>
+                    <div class="meta-card-value">Único desarrollador</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Plataformas</div>
+                    <div class="meta-card-value">Android · iOS · Web</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Stack</div>
+                    <div class="meta-card-value">Flutter + Firebase</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FUNCIONALIDADES -->
+        <div class="proj-section">
+            <div class="proj-section-label">Funcionalidades</div>
+            <h2>Lo que Workys puede hacer</h2>
+            <p>Cada módulo fue diseñado e implementado de forma completa en solitario durante el desarrollo del concurso.</p>
+
+            <div class="feat-grid">
+
+                <div class="feat-card">
+                    <span class="feat-icon">🔐</span>
+                    <div class="feat-title">Autenticación completa</div>
+                    <div class="feat-desc">Inicio de sesión, registro y gestión de sesión mediante Firebase Auth. Flujo seguro con validación de formularios y manejo de errores.</div>
+                </div>
+
+                <div class="feat-card">
+                    <span class="feat-icon">👤</span>
+                    <div class="feat-title">Perfil dual</div>
+                    <div class="feat-desc">Un mismo usuario puede actuar como contratante o como trabajador. Para activar el modo trabajador se requiere la carga y verificación de documentos legales.</div>
+                </div>
+
+                <div class="feat-card">
+                    <span class="feat-icon">❤️</span>
+                    <div class="feat-title">Servicio de favoritos</div>
+                    <div class="feat-desc">Los usuarios pueden guardar perfiles de trabajadores o servicios que les interesen para acceder rápidamente a ellos en futuras contrataciones.</div>
+                </div>
+
+                <div class="feat-card">
+                    <span class="feat-icon">⭐</span>
+                    <div class="feat-title">Reseñas y calificaciones</div>
+                    <div class="feat-desc">Cada trabajador cuenta con un perfil de reseñas donde los contratantes pueden dejar su opinión y calificación numérica tras el servicio prestado.</div>
+                </div>
+
+                <div class="feat-card">
+                    <span class="feat-icon">🏆</span>
+                    <div class="feat-title">Sistema de niveles</div>
+                    <div class="feat-desc">Los trabajadores acumulan experiencia y suben de nivel conforme reciben contrataciones y buenas reseñas, permitiendo a los clientes medir el rendimiento histórico.</div>
+                </div>
+
+                <div class="feat-card">
+                    <span class="feat-icon">🛡️</span>
+                    <div class="feat-title">Panel de administrador</div>
+                    <div class="feat-desc">Usuarios con privilegios especiales cuentan con opciones de administración para gestionar usuarios, validar documentos y moderar contenido.</div>
+                </div>
+
+                <div class="feat-card">
+                    <span class="feat-icon">💳</span>
+                    <div class="feat-title">Módulo de pagos</div>
+                    <div class="feat-desc">Se implementó el formulario de captura de datos de pago. El procesamiento efectivo del cobro quedó pendiente para una siguiente iteración del proyecto.</div>
+                    <span class="feat-warning">⚠️ Parcialmente implementado</span>
+                </div>
+
+                <div class="feat-card">
+                    <span class="feat-icon">📄</span>
+                    <div class="feat-title">Verificación documental</div>
+                    <div class="feat-desc">Antes de habilitar a un usuario para ofrecer servicios, la plataforma exige la carga de documentos que acrediten su identidad y legalidad para trabajar.</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SISTEMA DE NIVELES -->
+        <div class="proj-section">
+            <div class="proj-section-label">Gamificación</div>
+            <h2>Sistema de niveles</h2>
+            <p>Los trabajadores progresan en la plataforma conforme acumulan servicios completados y reseñas positivas. Esto da a los contratantes una métrica de confianza objetiva.</p>
+
+            <div class="levels-list">
+                <div class="level-row">
+                    <div class="level-icon">🥉</div>
+                    <div class="level-bar-wrap"><div class="level-bar" style="width:25%; background: linear-gradient(135deg, #cd7f32, #e8a96e);"></div></div>
+                    <div class="level-label" style="color:#cd7f32; font-weight:700;">Bronce</div>
+                </div>
+                <div class="level-row">
+                    <div class="level-icon">🥈</div>
+                    <div class="level-bar-wrap"><div class="level-bar" style="width:50%; background: linear-gradient(135deg, #a8a8a8, #d4d4d4);"></div></div>
+                    <div class="level-label" style="color:#888; font-weight:700;">Plata</div>
+                </div>
+                <div class="level-row">
+                    <div class="level-icon">🥇</div>
+                    <div class="level-bar-wrap"><div class="level-bar" style="width:75%; background: linear-gradient(135deg, #c9a227, #f0d060);"></div></div>
+                    <div class="level-label" style="color:#c9a227; font-weight:700;">Oro</div>
+                </div>
+                <div class="level-row">
+                    <div class="level-icon">💎</div>
+                    <div class="level-bar-wrap"><div class="level-bar" style="width:100%; background: linear-gradient(135deg, #6a5acd, #b39ddb);"></div></div>
+                    <div class="level-label" style="color:#6a5acd; font-weight:700;">Platino</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STACK -->
+        <div class="proj-section">
+            <div class="proj-section-label">Tecnología</div>
+            <h2>Stack y decisiones técnicas</h2>
+            <p>La elección tecnológica priorizó velocidad de desarrollo, cobertura multiplataforma y un ecosistema con amplio soporte de recursos.</p>
+
+            <div class="stack-grid">
+                <div class="stack-item">
+                    <div class="stack-icon">🐦</div>
+                    <div class="stack-info">
+                        <h4>Flutter</h4>
+                        <p>UI multiplataforma desde un solo codebase</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">🔥</div>
+                    <div class="stack-info">
+                        <h4>Firebase Auth</h4>
+                        <p>Autenticación segura y gestión de sesiones</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">🗄️</div>
+                    <div class="stack-info">
+                        <h4>Firestore</h4>
+                        <p>Base de datos en tiempo real NoSQL</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">📦</div>
+                    <div class="stack-info">
+                        <h4>Firebase Storage</h4>
+                        <p>Almacenamiento de documentos e imágenes</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">🌐</div>
+                    <div class="stack-info">
+                        <h4>Firebase Hosting</h4>
+                        <p>Deploy de la versión web</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box" style="background:#f9f9f9; border-color:#e0e0e0; border-left-color:#1a1a1a; margin-top:1.5rem;">
+                <div class="warning-box-icon">💡</div>
+                <div class="warning-box-text" style="color:#555;">
+                    Opté por <strong style="color:#1a1a1a;">Flutter + Firebase</strong> por la experiencia previa que manejaba con estas tecnologías, la facilidad para desarrollar en solitario cubriendo tres plataformas simultáneamente, y la amplia disponibilidad de documentación. Firebase permitió construir el backend funcional sin necesidad de un servidor propio, clave dado el tiempo limitado del concurso.
+                </div>
+            </div>
+        </div>
+
+        <!-- LIMITACIONES -->
+        <div class="proj-section">
+            <div class="proj-section-label">Limitaciones conocidas</div>
+            <h2>Lo que quedó pendiente</h2>
+
+            <div class="warning-box">
+                <div class="warning-box-icon">⚠️</div>
+                <div class="warning-box-text">
+                    <strong>Módulo de pagos parcial:</strong> Se implementó el flujo completo de captura de datos de pago (formulario, validación de campos), pero el procesamiento efectivo del cobro no fue integrado. La intención era conectar con una pasarela de pago en una siguiente versión del proyecto, fuera del alcance del concurso.
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVEGACIÓN ENTRE PROYECTOS -->
+        <div class="proj-nav">
+            <div></div>
+            <a href="../index.html" class="proj-nav-home">🏠 Portafolio</a>
+            <a href="proyecto2.html" class="proj-nav-btn proj-nav-right">
+                <span>Siguiente proyecto →</span>
+                <strong>InnovaTec — PeriPizarra</strong>
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>¡Gracias por visitar mi sitio!</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

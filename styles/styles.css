@@ -1,8 +1,6 @@
 /* =============================================================
    styles.css — ESTILOS GLOBALES
    Reemplaza por completo tu styles/styles.css existente.
-   Incluye todos tus estilos originales + correcciones menores
-   (se eliminaron los bloques duplicados de * y body que tenías).
    ============================================================= */
 
 /* =============================================
@@ -199,7 +197,7 @@ footer {
 }
 
 /* =============================================
-   TAG (compartido entre proyectos y concursos)
+   TAG (compartido)
    ============================================= */
 .tag {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -586,7 +584,7 @@ footer {
 }
 
 /* =============================================
-   SELECTOR DE IDIOMA
+   SELECTOR DE IDIOMA FLOTANTE (desktop)
    ============================================= */
 .language-selector {
     position: fixed;
@@ -701,6 +699,31 @@ footer {
 }
 
 /* =============================================
+   SELECTOR DE IDIOMA INLINE (solo móvil, en nav)
+   ============================================= */
+.nav-lang-inline {
+    display: none;
+}
+
+.nav-lang-inline select {
+    background: transparent;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.nav-lang-inline select:focus {
+    color: #1a1a1a;
+}
+
+/* =============================================
    BTN (compartido)
    ============================================= */
 .btn {
@@ -790,21 +813,13 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    /* Ocultar botón flotante, mostrar selector inline en nav */
     .language-selector {
-        top: 10px;
-        right: 10px;
+        display: none;
     }
 
-    .language-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-
-    .language-dropdown {
-        min-width: 150px;
-    }
-
-    .language-option {
-        padding: 0.85rem 1.2rem;
+    .nav-lang-inline {
+        display: flex;
+        align-items: center;
     }
 }
