@@ -4,8 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workys - Mi Portafolio</title>
+    <title>Sistema de Gestión Académica - Portafolio de Fernando Bustillos</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        .project-eyebrow { display: inline-block; background: #f0f0f0; color: #1a1a1a; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 20px; margin-bottom: 1rem; }
+        .project-hero { background: white; margin: 2rem auto; padding: 2.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .project-hero h1 { font-size: 2.2rem; color: #1a1a1a; margin-bottom: 1rem; }
+        .project-hero-desc { color: #666; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; max-width: 700px; }
+        .project-hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .project-hero-tags .tag { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: white; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.85rem; font-weight: 500; }
+        .hero-btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .btn-outline { display: inline-block; padding: 0.75rem 1.5rem; border: 2px solid #1a1a1a; color: #1a1a1a; text-decoration: none; border-radius: 5px; font-weight: 600; font-size: 0.95rem; transition: background 0.3s, color 0.3s; }
+        .btn-outline:hover { background: #1a1a1a; color: white; }
+        .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .meta-card { background: #f9f9f9; border-radius: 8px; padding: 1rem 1.25rem; border-left: 4px solid #1a1a1a; }
+        .meta-card-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 0.35rem; }
+        .meta-card-value { font-size: 0.95rem; font-weight: 700; color: #1a1a1a; }
+        .proj-section { background: white; margin: 1.5rem auto; padding: 2rem 2.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .proj-section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 0.4rem; }
+        .proj-section h2 { color: #1a1a1a; font-size: 1.5rem; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 3px solid #f0f0f0; }
+        .proj-section p { color: #555; line-height: 1.8; margin-bottom: 1rem; }
+        .proj-section p:last-child { margin-bottom: 0; }
+        .proj-section strong { color: #1a1a1a; }
+        .feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+        .feat-card { background: #f9f9f9; border-radius: 8px; padding: 1.5rem; border-left: 4px solid #1a1a1a; transition: transform 0.3s, box-shadow 0.3s; }
+        .feat-card:hover { transform: translateY(-4px); box-shadow: 0 5px 15px rgba(0,0,0,0.12); }
+        .feat-icon { font-size: 1.75rem; margin-bottom: 0.75rem; display: block; }
+        .feat-title { font-size: 1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
+        .feat-desc { font-size: 0.88rem; color: #666; line-height: 1.65; }
+        .stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+        .stack-item { background: #f9f9f9; border-radius: 8px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 0.9rem; }
+        .stack-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .stack-info h4 { font-size: 0.92rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.15rem; }
+        .stack-info p { font-size: 0.78rem; color: #888; margin: 0; line-height: 1.4; }
+        .info-box { background: #f9f9f9; border: 1px solid #e0e0e0; border-left: 4px solid #1a1a1a; border-radius: 8px; padding: 1.25rem 1.5rem; display: flex; gap: 0.9rem; align-items: flex-start; margin-top: 1.5rem; }
+        .info-box-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .info-box-text { font-size: 0.9rem; color: #555; line-height: 1.7; }
+        .info-box-text strong { color: #1a1a1a; }
+
+        /* Tabla de entidades */
+        .entity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+        .entity-card { background: #f9f9f9; border-radius: 8px; padding: 1.25rem 1.5rem; border-top: 3px solid #1a1a1a; }
+        .entity-card h4 { font-size: 1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .entity-card ul { list-style: none; margin: 0; padding: 0; }
+        .entity-card ul li { font-size: 0.82rem; color: #666; padding: 0.25rem 0; border-bottom: 1px solid #ececec; }
+        .entity-card ul li:last-child { border-bottom: none; }
+        .entity-card ul li::before { content: "▸ "; color: #1a1a1a; font-weight: bold; }
+
+        .proj-nav { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin: 2rem auto; }
+        .proj-nav-btn { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1rem 1.25rem; text-decoration: none; color: #333; transition: border-color 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+        .proj-nav-btn:hover { border-color: #1a1a1a; box-shadow: 0 3px 10px rgba(0,0,0,0.1); color: #333; }
+        .proj-nav-btn span { font-size: 0.72rem; color: #999; margin-bottom: 0.3rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+        .proj-nav-btn strong { font-size: 0.95rem; color: #1a1a1a; }
+        .proj-nav-right { text-align: right; }
+        .proj-nav-home { text-decoration: none; color: #999; font-size: 0.85rem; text-align: center; transition: color 0.2s; font-weight: 600; }
+        .proj-nav-home:hover { color: #1a1a1a; }
+        @media (max-width: 768px) {
+            .project-hero h1 { font-size: 1.7rem; }
+            .feat-grid { grid-template-columns: 1fr; }
+            .stack-grid { grid-template-columns: 1fr 1fr; }
+            .entity-grid { grid-template-columns: 1fr 1fr; }
+            .proj-nav { grid-template-columns: 1fr 1fr; }
+            .proj-nav-home { display: none; }
+            .proj-section { padding: 1.5rem; }
+        }
+        @media (max-width: 480px) {
+            .stack-grid { grid-template-columns: 1fr; }
+            .entity-grid { grid-template-columns: 1fr; }
+            .proj-nav { grid-template-columns: 1fr; }
+            .proj-nav-right { text-align: left; }
+            .meta-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
 
 <body>
@@ -27,32 +97,245 @@
         </ul>
     </nav>
 
-    <h1>
-        <center> En desarrollo </center>
-    </h1>
+    <main class="container">
+
+        <!-- HERO -->
+        <div class="project-hero">
+            <span class="project-eyebrow">Proyecto académico — Java</span>
+            <h1>Sistema de Gestión Académica</h1>
+            <p class="project-hero-desc">
+                Sistema de escritorio en Java puro para la administración completa de alumnos, docentes, cursos y clases. El proyecto en el que más tiempo y dedicación he invertido de todos mis sistemas CRUD a lo largo de la carrera.
+            </p>
+            <div class="project-hero-tags">
+                <span class="tag">Java</span>
+                <span class="tag">MVC</span>
+                <span class="tag">POO</span>
+                <span class="tag">CRUD</span>
+                <span class="tag">Autenticación</span>
+                <span class="tag">Persistencia local</span>
+            </div>
+            <div class="hero-btn-row">
+                <a href="../index.html" class="btn-outline">← Portafolio</a>
+            </div>
+        </div>
+
+        <!-- CONTEXTO -->
+        <div class="proj-section">
+            <div class="proj-section-label">Contexto del proyecto</div>
+            <h2>El proyecto más trabajado de su tipo</h2>
+            <p>
+                A lo largo de la carrera he desarrollado múltiples sistemas CRUD. Este es el que más esfuerzo y dedicación requirió. No es solo un sistema de registro: es una plataforma de gestión completa con <strong>cuatro entidades relacionadas</strong>, módulo de autenticación y arquitectura bien estructurada.
+            </p>
+            <p>
+                La decisión de usar <strong>Java puro sin frameworks externos</strong> y seguir el patrón <strong>MVC (Modelo–Vista–Controlador)</strong> fue intencional: el objetivo era demostrar dominio de los fundamentos de la programación orientada a objetos y de la arquitectura de software, sin apoyarme en atajos.
+            </p>
+
+            <div class="meta-grid">
+                <div class="meta-card">
+                    <div class="meta-card-label">Lenguaje</div>
+                    <div class="meta-card-value">Java puro</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Arquitectura</div>
+                    <div class="meta-card-value">MVC</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Persistencia</div>
+                    <div class="meta-card-value">Repositorio local</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Tipo</div>
+                    <div class="meta-card-value">Escritorio</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Paradigma</div>
+                    <div class="meta-card-value">POO</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENTIDADES -->
+        <div class="proj-section">
+            <div class="proj-section-label">Modelo de datos</div>
+            <h2>Entidades del sistema</h2>
+            <p>El sistema gestiona cuatro entidades con sus propias tablas, formularios y operaciones CRUD independientes.</p>
+
+            <div class="entity-grid">
+                <div class="entity-card">
+                    <h4>🎓 Alumnos</h4>
+                    <ul>
+                        <li>Nombre completo</li>
+                        <li>Matrícula</li>
+                        <li>Carrera</li>
+                        <li>Semestre</li>
+                        <li>Estatus</li>
+                    </ul>
+                </div>
+                <div class="entity-card">
+                    <h4>👨‍🏫 Docentes</h4>
+                    <ul>
+                        <li>Nombre completo</li>
+                        <li>Número de empleado</li>
+                        <li>Especialidad</li>
+                        <li>Departamento</li>
+                    </ul>
+                </div>
+                <div class="entity-card">
+                    <h4>📚 Cursos</h4>
+                    <ul>
+                        <li>Nombre de la materia</li>
+                        <li>Clave</li>
+                        <li>Créditos</li>
+                        <li>Semestre al que pertenece</li>
+                    </ul>
+                </div>
+                <div class="entity-card">
+                    <h4>🗓️ Clases</h4>
+                    <ul>
+                        <li>Curso asignado</li>
+                        <li>Docente asignado</li>
+                        <li>Horario</li>
+                        <li>Aula</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FUNCIONALIDADES -->
+        <div class="proj-section">
+            <div class="proj-section-label">Funcionalidades</div>
+            <h2>¿Qué puede hacer el sistema?</h2>
+
+            <div class="feat-grid">
+                <div class="feat-card">
+                    <span class="feat-icon">📋</span>
+                    <div class="feat-title">Tablas con listado completo</div>
+                    <div class="feat-desc">Cada entidad tiene su vista de tabla donde se muestra el listado completo con todos los campos, con opción de seleccionar un registro para editarlo o eliminarlo.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">➕</span>
+                    <div class="feat-title">CRUD completo por entidad</div>
+                    <div class="feat-desc">Crear, leer, actualizar y eliminar registros para cada una de las cuatro entidades (alumnos, docentes, cursos y clases) de forma independiente.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">🔐</span>
+                    <div class="feat-title">Sistema de autenticación</div>
+                    <div class="feat-desc">Pantalla de inicio de sesión con validación de credenciales. Solo usuarios autenticados pueden acceder al panel de administración del sistema.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">💾</span>
+                    <div class="feat-title">Persistencia local</div>
+                    <div class="feat-desc">Los datos se almacenan en un repositorio local. La información persiste entre sesiones sin depender de una base de datos externa ni conexión a internet.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ARQUITECTURA MVC -->
+        <div class="proj-section">
+            <div class="proj-section-label">Arquitectura</div>
+            <h2>Patrón MVC aplicado</h2>
+            <p>
+                El sistema está construido siguiendo el patrón <strong>Modelo–Vista–Controlador</strong> de forma estricta, separando responsabilidades en tres capas bien definidas.
+            </p>
+
+            <div class="feat-grid">
+                <div class="feat-card">
+                    <span class="feat-icon">🗃️</span>
+                    <div class="feat-title">Modelo</div>
+                    <div class="feat-desc">Clases Java que representan las entidades (Alumno, Docente, Curso, Clase) y los repositorios locales responsables de la persistencia y consulta de datos.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">🖥️</span>
+                    <div class="feat-title">Vista</div>
+                    <div class="feat-desc">Interfaces gráficas construidas en Java (Swing) para cada módulo: tablas, formularios de alta/edición y pantalla de login. La vista solo muestra datos, no los procesa.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">⚙️</span>
+                    <div class="feat-title">Controlador</div>
+                    <div class="feat-desc">Clases controladoras que reciben las acciones del usuario desde la vista, invocan la lógica del modelo y actualizan la vista con el resultado. Toda la lógica de negocio vive aquí.</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-box-icon">💡</div>
+                <div class="info-box-text">
+                    Usar MVC en Java puro, sin frameworks como Spring o JavaFX, implicó definir manualmente la comunicación entre capas. Esto fue un ejercicio valioso para entender <strong>por qué los frameworks existen</strong> y qué problema resuelven, antes de depender de ellos.
+                </div>
+            </div>
+        </div>
+
+        <!-- STACK -->
+        <div class="proj-section">
+            <div class="proj-section-label">Tecnología</div>
+            <h2>Stack utilizado</h2>
+
+            <div class="stack-grid">
+                <div class="stack-item">
+                    <div class="stack-icon">☕</div>
+                    <div class="stack-info">
+                        <h4>Java SE</h4>
+                        <p>Lenguaje principal — sin frameworks externos</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">🖼️</div>
+                    <div class="stack-info">
+                        <h4>Java Swing</h4>
+                        <p>Interfaz gráfica de escritorio</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">🗂️</div>
+                    <div class="stack-info">
+                        <h4>Repositorio local</h4>
+                        <p>Persistencia de datos sin BD externa</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">🏗️</div>
+                    <div class="stack-info">
+                        <h4>Patrón MVC</h4>
+                        <p>Arquitectura Modelo–Vista–Controlador</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">📦</div>
+                    <div class="stack-info">
+                        <h4>POO</h4>
+                        <p>Herencia, encapsulamiento, polimorfismo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAV -->
+        <div class="proj-nav">
+            <a href="pUbiseller.html" class="proj-nav-btn">
+                <span>← Proyecto anterior</span>
+                <strong>Ubiseller</strong>
+            </a>
+            <a href="../index.html" class="proj-nav-home">🏠 Portafolio</a>
+            <div></div>
+        </div>
+
+    </main>
 
     <footer>
         <div class="container">
             <p>¡Gracias por visitar mi sitio!</p>
         </div>
     </footer>
+
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-
                 const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     </script>
 </body>
-
 </html>

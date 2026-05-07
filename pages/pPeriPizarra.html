@@ -4,8 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeriPizarra - Mi Portafolio</title>
+    <title>PeriPizarra - Portafolio de Fernando Bustillos</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        .project-eyebrow {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #1a1a1a;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+        .project-hero {
+            background: white;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .project-hero h1 { font-size: 2.2rem; color: #1a1a1a; margin-bottom: 1rem; }
+        .project-hero-desc { color: #666; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; max-width: 700px; }
+        .project-hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .project-hero-tags .tag {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.85rem; font-weight: 500;
+        }
+        .hero-btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .btn-outline {
+            display: inline-block; padding: 0.75rem 1.5rem; border: 2px solid #1a1a1a;
+            color: #1a1a1a; text-decoration: none; border-radius: 5px; font-weight: 600;
+            font-size: 0.95rem; transition: background 0.3s, color 0.3s;
+        }
+        .btn-outline:hover { background: #1a1a1a; color: white; }
+        .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .meta-card { background: #f9f9f9; border-radius: 8px; padding: 1rem 1.25rem; border-left: 4px solid #1a1a1a; }
+        .meta-card-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 0.35rem; }
+        .meta-card-value { font-size: 0.95rem; font-weight: 700; color: #1a1a1a; }
+        .proj-section { background: white; margin: 1.5rem auto; padding: 2rem 2.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .proj-section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 0.4rem; }
+        .proj-section h2 { color: #1a1a1a; font-size: 1.5rem; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 3px solid #f0f0f0; }
+        .proj-section p { color: #555; line-height: 1.8; margin-bottom: 1rem; }
+        .proj-section p:last-child { margin-bottom: 0; }
+        .proj-section strong { color: #1a1a1a; }
+        .feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+        .feat-card { background: #f9f9f9; border-radius: 8px; padding: 1.5rem; border-left: 4px solid #1a1a1a; transition: transform 0.3s, box-shadow 0.3s; }
+        .feat-card:hover { transform: translateY(-4px); box-shadow: 0 5px 15px rgba(0,0,0,0.12); }
+        .feat-icon { font-size: 1.75rem; margin-bottom: 0.75rem; display: block; }
+        .feat-title { font-size: 1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
+        .feat-desc { font-size: 0.88rem; color: #666; line-height: 1.65; }
+        .stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+        .stack-item { background: #f9f9f9; border-radius: 8px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 0.9rem; }
+        .stack-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .stack-info h4 { font-size: 0.92rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.15rem; }
+        .stack-info p { font-size: 0.78rem; color: #888; margin: 0; line-height: 1.4; }
+        .info-box { background: #f9f9f9; border: 1px solid #e0e0e0; border-left: 4px solid #1a1a1a; border-radius: 8px; padding: 1.25rem 1.5rem; display: flex; gap: 0.9rem; align-items: flex-start; margin-top: 1.5rem; }
+        .info-box-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .info-box-text { font-size: 0.9rem; color: #555; line-height: 1.7; }
+        .info-box-text strong { color: #1a1a1a; }
+        .warning-box { background: #fff8e1; border: 1px solid #ffe0b2; border-left: 4px solid #e65100; border-radius: 8px; padding: 1.25rem 1.5rem; display: flex; gap: 0.9rem; align-items: flex-start; margin-top: 1.5rem; }
+        .warning-box-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .warning-box-text { font-size: 0.9rem; color: #555; line-height: 1.7; }
+        .warning-box-text strong { color: #e65100; }
+        .proj-nav { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin: 2rem auto; }
+        .proj-nav-btn { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1rem 1.25rem; text-decoration: none; color: #333; transition: border-color 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+        .proj-nav-btn:hover { border-color: #1a1a1a; box-shadow: 0 3px 10px rgba(0,0,0,0.1); color: #333; }
+        .proj-nav-btn span { font-size: 0.72rem; color: #999; margin-bottom: 0.3rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+        .proj-nav-btn strong { font-size: 0.95rem; color: #1a1a1a; }
+        .proj-nav-right { text-align: right; }
+        .proj-nav-home { text-decoration: none; color: #999; font-size: 0.85rem; text-align: center; transition: color 0.2s; font-weight: 600; }
+        .proj-nav-home:hover { color: #1a1a1a; }
+        @media (max-width: 768px) {
+            .project-hero h1 { font-size: 1.7rem; }
+            .feat-grid { grid-template-columns: 1fr; }
+            .stack-grid { grid-template-columns: 1fr 1fr; }
+            .proj-nav { grid-template-columns: 1fr 1fr; }
+            .proj-nav-home { display: none; }
+            .proj-section { padding: 1.5rem; }
+        }
+        @media (max-width: 480px) {
+            .stack-grid { grid-template-columns: 1fr; }
+            .proj-nav { grid-template-columns: 1fr; }
+            .proj-nav-right { text-align: left; }
+            .meta-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
 
 <body>
@@ -27,32 +113,193 @@
         </ul>
     </nav>
 
-    <h1>
-        <center> En desarrollo </center>
-    </h1>
+    <main class="container">
+
+        <!-- HERO -->
+        <div class="project-hero">
+            <span class="project-eyebrow">InnovaTec — Etapa Local</span>
+            <h1>PeriPizarra</h1>
+            <p class="project-hero-desc">
+                Pantalla interactiva incrustada en una periquera para niños. Mantiene al infante entretenido mientras come mediante actividades digitales, permitiendo a los padres descansar sin preocupaciones.
+            </p>
+            <div class="project-hero-tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">Hardware</span>
+                <span class="tag">Tablet</span>
+                <span class="tag">Interacción infantil</span>
+            </div>
+            <div class="hero-btn-row">
+                <a href="../index.html" class="btn-outline">← Portafolio</a>
+            </div>
+        </div>
+
+        <!-- CONTEXTO -->
+        <div class="proj-section">
+            <div class="proj-section-label">Contexto del proyecto</div>
+            <h2>¿Qué es PeriPizarra?</h2>
+            <p>
+                PeriPizarra surge de InnovaTec, un concurso de innovación tecnológica del ITCH2. La idea central es integrar una pantalla interactiva en la charola de una periquera, convirtiendo la hora de comer en una experiencia entretenida y educativa para el bebé.
+            </p>
+            <p>
+                El objetivo práctico es claro: si el niño está ocupado con actividades en la pantalla, <strong>los padres ganan tiempo libre</strong> sin tener que preocuparse de que el infante intente escapar de la silla o se niegue a comer.
+            </p>
+
+            <div class="meta-grid">
+                <div class="meta-card">
+                    <div class="meta-card-label">Concurso</div>
+                    <div class="meta-card-value">InnovaTec ITCH2</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Etapa alcanzada</div>
+                    <div class="meta-card-value">Local</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Equipo</div>
+                    <div class="meta-card-value">Multidisciplinario</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Mi rol</div>
+                    <div class="meta-card-value">Único desarrollador</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Hardware</div>
+                    <div class="meta-card-value">Tablet integrada</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DECISIÓN DE HARDWARE -->
+        <div class="proj-section">
+            <div class="proj-section-label">Decisión técnica</div>
+            <h2>¿Por qué una tablet?</h2>
+            <p>
+                Durante la investigación inicial evalué varias opciones de pantalla: pantallas táctiles industriales, Raspberry Pi con display, y tablets de consumo. Después de comparar costos, tiempos de integración y disponibilidad, me decidí por una <strong>tablet</strong>.
+            </p>
+
+            <div class="info-box">
+                <div class="info-box-icon">💡</div>
+                <div class="info-box-text">
+                    Usar una tablet resultó ser <strong>significativamente más barato</strong> que cualquier alternativa de pantalla táctil industrial, y el tiempo de desarrollo del prototipo físico se redujo considerablemente. Dado el plazo limitado del concurso, fue la decisión más pragmática sin sacrificar la experiencia de usuario.
+                </div>
+            </div>
+        </div>
+
+        <!-- SOFTWARE -->
+        <div class="proj-section">
+            <div class="proj-section-label">Software desarrollado</div>
+            <h2>Actividades interactivas para el infante</h2>
+            <p>
+                Desarrollé en <strong>Flutter</strong> una app con múltiples actividades pensadas para niños pequeños: simples, coloridas y estimulantes. La actividad principal fue la pizarra digital, y alrededor de ella construí un conjunto de minijuegos.
+            </p>
+
+            <div class="feat-grid">
+                <div class="feat-card">
+                    <span class="feat-icon">🎨</span>
+                    <div class="feat-title">Pizarra tipo Paint</div>
+                    <div class="feat-desc">Actividad principal. El infante puede dibujar y hacer garabatos libremente con variedad de colores, tamaños de pincel y opción de borrar. Diseñada para ser intuitiva con el dedo.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">🫧</span>
+                    <div class="feat-title">Explotar burbujas</div>
+                    <div class="feat-desc">Burbujas aparecen en posiciones aleatorias de la pantalla y el niño debe tocarlas para explotarlas. Estimula la coordinación ojo-mano de forma divertida.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">🎹</span>
+                    <div class="feat-title">Piano interactivo</div>
+                    <div class="feat-desc">Teclado simplificado donde cada tecla reproduce su nota correspondiente. Introduce al niño al sonido musical de forma táctil e inmediata.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">⚽</span>
+                    <div class="feat-title">Pelota rebotante</div>
+                    <div class="feat-desc">Una pelota animada rebota por la pantalla siguiendo física básica. El infante puede interactuar con ella tocándola para cambiar su dirección o velocidad.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STACK -->
+        <div class="proj-section">
+            <div class="proj-section-label">Tecnología</div>
+            <h2>Stack utilizado</h2>
+
+            <div class="stack-grid">
+                <div class="stack-item">
+                    <div class="stack-icon">🐦</div>
+                    <div class="stack-info">
+                        <h4>Flutter / Dart</h4>
+                        <p>Desarrollo de todas las actividades interactivas</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">📱</div>
+                    <div class="stack-info">
+                        <h4>Tablet Android</h4>
+                        <p>Hardware de pantalla integrado en la periquera</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">✏️</div>
+                    <div class="stack-info">
+                        <h4>Canvas API (Flutter)</h4>
+                        <p>Motor de dibujo para la pizarra tipo Paint</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">🔊</div>
+                    <div class="stack-info">
+                        <h4>Audio Flutter</h4>
+                        <p>Reproducción de notas para el piano</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESULTADO -->
+        <div class="proj-section">
+            <div class="proj-section-label">Resultado</div>
+            <h2>Lo que logramos</h2>
+            <p>
+                Presentamos un prototipo funcional en la etapa local del concurso: una periquera real con la tablet integrada corriendo la app con todas las actividades. La respuesta del jurado fue positiva en cuanto a la idea y la ejecución del software.
+            </p>
+            <div class="warning-box">
+                <div class="warning-box-icon">ℹ️</div>
+                <div class="warning-box-text">
+                    <strong>Resultado del concurso:</strong> Participamos en la etapa local pero no logramos pasar a la regional. La experiencia de investigar opciones de hardware, tomar decisiones de costo/tiempo y desarrollar software orientado a usuarios muy jóvenes fue un aprendizaje importante.
+                </div>
+            </div>
+        </div>
+
+        <!-- NAV -->
+        <div class="proj-nav">
+            <a href="pSmartParking.html" class="proj-nav-btn">
+                <span>← Proyecto anterior</span>
+                <strong>Hackatec — SmartParking</strong>
+            </a>
+            <a href="../index.html" class="proj-nav-home">🏠 Portafolio</a>
+            <a href="pUbiseller.html" class="proj-nav-btn proj-nav-right">
+                <span>Siguiente proyecto →</span>
+                <strong>Ubiseller</strong>
+            </a>
+        </div>
+
+    </main>
 
     <footer>
         <div class="container">
             <p>¡Gracias por visitar mi sitio!</p>
         </div>
     </footer>
+
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-
                 const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     </script>
 </body>
-
 </html>

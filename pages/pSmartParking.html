@@ -4,8 +4,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workys - Mi Portafolio</title>
+    <title>SmartParking - Portafolio de Fernando Bustillos</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        .project-eyebrow {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #1a1a1a;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+        .project-hero {
+            background: white;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .project-hero h1 {
+            font-size: 2.2rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        .project-hero-desc {
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+        .project-hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .project-hero-tags .tag {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .hero-btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .btn-outline {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #1a1a1a;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.3s, color 0.3s;
+        }
+        .btn-outline:hover { background: #1a1a1a; color: white; }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .meta-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            border-left: 4px solid #1a1a1a;
+        }
+        .meta-card-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #999;
+            margin-bottom: 0.35rem;
+        }
+        .meta-card-value {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .proj-section {
+            background: white;
+            margin: 1.5rem auto;
+            padding: 2rem 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .proj-section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.4rem;
+        }
+        .proj-section h2 {
+            color: #1a1a1a;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        .proj-section p { color: #555; line-height: 1.8; margin-bottom: 1rem; }
+        .proj-section p:last-child { margin-bottom: 0; }
+        .proj-section strong { color: #1a1a1a; }
+        .feat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+        .feat-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid #1a1a1a;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feat-card:hover { transform: translateY(-4px); box-shadow: 0 5px 15px rgba(0,0,0,0.12); }
+        .feat-icon { font-size: 1.75rem; margin-bottom: 0.75rem; display: block; }
+        .feat-title { font-size: 1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
+        .feat-desc { font-size: 0.88rem; color: #666; line-height: 1.65; }
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .stack-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+        .stack-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .stack-info h4 { font-size: 0.92rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.15rem; }
+        .stack-info p { font-size: 0.78rem; color: #888; margin: 0; line-height: 1.4; }
+        .info-box {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #1a1a1a;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            gap: 0.9rem;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+        }
+        .info-box-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .info-box-text { font-size: 0.9rem; color: #555; line-height: 1.7; }
+        .info-box-text strong { color: #1a1a1a; }
+        .warning-box {
+            background: #fff8e1;
+            border: 1px solid #ffe0b2;
+            border-left: 4px solid #e65100;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            gap: 0.9rem;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+        }
+        .warning-box-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .warning-box-text { font-size: 0.9rem; color: #555; line-height: 1.7; }
+        .warning-box-text strong { color: #e65100; }
+        .proj-nav {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+            margin: 2rem auto;
+        }
+        .proj-nav-btn {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            text-decoration: none;
+            color: #333;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .proj-nav-btn:hover { border-color: #1a1a1a; box-shadow: 0 3px 10px rgba(0,0,0,0.1); color: #333; }
+        .proj-nav-btn span { font-size: 0.72rem; color: #999; margin-bottom: 0.3rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+        .proj-nav-btn strong { font-size: 0.95rem; color: #1a1a1a; }
+        .proj-nav-right { text-align: right; }
+        .proj-nav-home { text-decoration: none; color: #999; font-size: 0.85rem; text-align: center; transition: color 0.2s; font-weight: 600; }
+        .proj-nav-home:hover { color: #1a1a1a; }
+        @media (max-width: 768px) {
+            .project-hero h1 { font-size: 1.7rem; }
+            .feat-grid { grid-template-columns: 1fr; }
+            .stack-grid { grid-template-columns: 1fr 1fr; }
+            .proj-nav { grid-template-columns: 1fr 1fr; }
+            .proj-nav-home { display: none; }
+            .proj-section { padding: 1.5rem; }
+        }
+        @media (max-width: 480px) {
+            .stack-grid { grid-template-columns: 1fr; }
+            .proj-nav { grid-template-columns: 1fr; }
+            .proj-nav-right { text-align: left; }
+            .meta-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
 
 <body>
@@ -27,32 +238,209 @@
         </ul>
     </nav>
 
-    <h1>
-        <center> En desarrollo </center>
-    </h1>
+    <main class="container">
+
+        <!-- HERO -->
+        <div class="project-hero">
+            <span class="project-eyebrow">Hackatec 2024 — 24 horas</span>
+            <h1>SmartParking</h1>
+            <p class="project-hero-desc">
+                Plataforma web para la visualización en tiempo real de cajones de estacionamiento. Detecta automáticamente si un espacio se ocupa o desocupa mediante cámara y lo refleja al instante en la interfaz.
+            </p>
+            <div class="project-hero-tags">
+                <span class="tag">C#</span>
+                <span class="tag">HTML / CSS / JS</span>
+                <span class="tag">WebSocket</span>
+                <span class="tag">HikVision SDK</span>
+                <span class="tag">Redes</span>
+            </div>
+            <div class="hero-btn-row">
+                <a href="../index.html" class="btn-outline">← Portafolio</a>
+            </div>
+        </div>
+
+        <!-- CONTEXTO -->
+        <div class="proj-section">
+            <div class="proj-section-label">Contexto del proyecto</div>
+            <h2>¿Qué es SmartParking?</h2>
+            <p>
+                SmartParking nació en el <strong>Hackatec</strong>, un hackathon de <strong>24 horas</strong> organizado por el ITCH2 y patrocinado por <strong>HikVision</strong>. El reto era crear una solución tecnológica usando el ecosistema de cámaras y software de la empresa.
+            </p>
+            <p>
+                La idea fue construir un sistema que permitiera a cualquier persona ver desde su dispositivo qué cajones del estacionamiento están libres y cuáles ocupados, sin necesidad de recorrerlo físicamente.
+            </p>
+
+            <div class="meta-grid">
+                <div class="meta-card">
+                    <div class="meta-card-label">Evento</div>
+                    <div class="meta-card-value">Hackatec ITCH2</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Duración</div>
+                    <div class="meta-card-value">24 horas</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Patrocinador</div>
+                    <div class="meta-card-value">HikVision</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Equipo</div>
+                    <div class="meta-card-value">5 integrantes</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-card-label">Mi rol</div>
+                    <div class="meta-card-value">Comunicación + Web + Pitch</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MI ROL -->
+        <div class="proj-section">
+            <div class="proj-section-label">Mi contribución</div>
+            <h2>¿Qué hice yo?</h2>
+            <p>
+                Dentro del equipo de 5 personas me encargué de tres frentes: adaptar la aplicación de C# que HikVision proporcionó para que enviara los datos de detección a mi sitio web, construir la base de la página web que recibía y visualizaba esos datos, y dar el <strong>pitch frente al jurado</strong>.
+            </p>
+
+            <div class="feat-grid">
+                <div class="feat-card">
+                    <span class="feat-icon">🔌</span>
+                    <div class="feat-title">Integración con HikVision SDK</div>
+                    <div class="feat-desc">Adapté la aplicación de C# proporcionada por HikVision para que, en lugar de solo mostrar datos localmente, los enviara en tiempo real al sitio web vía WebSocket.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">🌐</span>
+                    <div class="feat-title">Desarrollo del sitio web</div>
+                    <div class="feat-desc">Construí la base de la página en HTML, CSS y JavaScript con un listener de WebSocket que recibía el estado de cada cajón y actualizaba la visualización al instante.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">🎤</span>
+                    <div class="feat-title">Pitch ante el jurado</div>
+                    <div class="feat-desc">Presenté el proyecto y sus fundamentos técnicos frente al panel de jueces del hackathon, comunicando tanto la solución como su potencial de escalabilidad.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">🔗</span>
+                    <div class="feat-title">Infraestructura de red</div>
+                    <div class="feat-desc">La cámara se conectó mediante switch y router para garantizar la comunicación estable entre el hardware de HikVision, la app de C# y el servidor web local.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CÓMO FUNCIONA -->
+        <div class="proj-section">
+            <div class="proj-section-label">Arquitectura</div>
+            <h2>¿Cómo funciona?</h2>
+            <p>El flujo de datos va de la cámara al sitio web en tres pasos:</p>
+
+            <div class="feat-grid">
+                <div class="feat-card">
+                    <span class="feat-icon">📷</span>
+                    <div class="feat-title">1 — Detección por cámara</div>
+                    <div class="feat-desc">La cámara HikVision analiza el área del estacionamiento y detecta si un cajón cambia de estado (libre → ocupado o viceversa).</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">⚙️</span>
+                    <div class="feat-title">2 — Procesamiento en C#</div>
+                    <div class="feat-desc">La app de C# (adaptada del SDK de HikVision) recibe el evento de la cámara y lo retransmite al sitio web mediante un servidor WebSocket.</div>
+                </div>
+                <div class="feat-card">
+                    <span class="feat-icon">🖥️</span>
+                    <div class="feat-title">3 — Visualización web</div>
+                    <div class="feat-desc">El sitio web escucha el WebSocket y actualiza en tiempo real la representación visual de cada cajón, mostrándolo en verde (libre) o rojo (ocupado).</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STACK -->
+        <div class="proj-section">
+            <div class="proj-section-label">Tecnología</div>
+            <h2>Stack utilizado</h2>
+
+            <div class="stack-grid">
+                <div class="stack-item">
+                    <div class="stack-icon">⚙️</div>
+                    <div class="stack-info">
+                        <h4>C# + HikVision SDK</h4>
+                        <p>Adaptación del middleware de detección</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">🌐</div>
+                    <div class="stack-info">
+                        <h4>HTML / CSS / JS</h4>
+                        <p>Interfaz web de visualización</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">🔄</div>
+                    <div class="stack-info">
+                        <h4>WebSocket</h4>
+                        <p>Comunicación en tiempo real C# → Web</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">📷</div>
+                    <div class="stack-info">
+                        <h4>Cámara HikVision</h4>
+                        <p>Detección visual de espacios</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-icon">🔗</div>
+                    <div class="stack-info">
+                        <h4>Switch + Router</h4>
+                        <p>Infraestructura de red local</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESULTADO -->
+        <div class="proj-section">
+            <div class="proj-section-label">Resultado</div>
+            <h2>Lo que logramos</h2>
+            <p>
+                En 24 horas logramos construir un prototipo funcional de extremo a extremo: desde la cámara captando el estacionamiento hasta la página web mostrando el estado de cada cajón en tiempo real.
+            </p>
+            <div class="warning-box">
+                <div class="warning-box-icon">ℹ️</div>
+                <div class="warning-box-text">
+                    <strong>Resultado del concurso:</strong> No logramos pasar a la etapa regional. Sin embargo, el reto de integrar hardware propietario, un SDK de C# y una interfaz web en tiempo real en solo 24 horas fue una experiencia técnica muy valiosa.
+                </div>
+            </div>
+        </div>
+
+        <!-- NAV -->
+        <div class="proj-nav">
+            <a href="pWorkys.html" class="proj-nav-btn">
+                <span>← Proyecto anterior</span>
+                <strong>InnovaTec — Workys</strong>
+            </a>
+            <a href="../index.html" class="proj-nav-home">🏠 Portafolio</a>
+            <a href="pPeriPizarra.html" class="proj-nav-btn proj-nav-right">
+                <span>Siguiente proyecto →</span>
+                <strong>InnovaTec — PeriPizarra</strong>
+            </a>
+        </div>
+
+    </main>
 
     <footer>
         <div class="container">
             <p>¡Gracias por visitar mi sitio!</p>
         </div>
     </footer>
+
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-
                 const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     </script>
 </body>
-
 </html>
